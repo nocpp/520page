@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>Touch Move</title>
+        <link rel="stylesheet" href="css/swiper.min.css">
+        <link rel="stylesheet" href="css/animate.min.css">
+        <style type="text/css">
+            * {margin: 0;padding: 0;}
+            html, body {height: 100%;overflow: hidden;}
+            .swiper-container {width: 100%;height: 100%;background: #fff;}
+            .bg {width: 100%;height: 100%;background-repeat: no-repeat;background-position: center top;
+                background-size: cover;}
+            .slide-one {color: #fff;font-size: 30px;text-align: center;font-weight: 600;display: flex;
+                align-items: center;height: 100%;justify-content: center;}
+            .swiper-pagination-bullet {width: 6px;height: 6px;background: #fff;opacity: .4;}
+            .swiper-pagination-bullet-active {opacity: 1;}
+            .next-icon {position: fixed;bottom: 0;left: 50%;width: 24px;height: auto;
+                transform: translate3d(-50%, -10px, 0);z-index: 99999;animation: tipmove 1.5s infinite ease-in-out;}
+            @keyframes tipmove {
+                0% {
+                    transform: translate3d(-50%, -10px, 0);
+                    opacity: 0;
+                }
+                50% {
+                    transform: translate3d(-50%, -15px, 0);
+                    opacity: 1;
+                }
+                100% {
+                    transform: translate3d(-50%, -20px, 0);
+                    opacity: 0;
+                }
+            }
+        </style>
+	</head>
+	<body>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="bg" style="background-image: url(./images/p1.jpg)">
+                        <div class="ani slide-one" 
+                        swiper-animate-effect="bounceInDown" 
+                        swiper-animate-duration="0.8s" 
+                        swiper-animate-delay="0.1s">天天都需要你爱</div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="bg" style="background-image: url(./images/p2.jpg)">
+                        <div class="ani slide-one"
+                        swiper-animate-effect="lightSpeedIn" 
+                        swiper-animate-duration="0.8s" 
+                        swiper-animate-delay="0.1s">我的心思由你猜</div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="bg" style="background-image: url(./images/p3.jpg)">
+                        <div class="ani slide-one"
+                        swiper-animate-effect="rollIn" 
+                        swiper-animate-duration="0.8s" 
+                        swiper-animate-delay="0.1s">I Love You</div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="bg" style="background-image: url(./images/p4.jpg)">
+                        <div class="ani slide-one"
+                        swiper-animate-effect="rotateIn" 
+                        swiper-animate-duration="0.8s" 
+                        swiper-animate-delay="0.1s">我就是要你让我每天都精彩</div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="bg" style="background-image: url(./images/p5.jpg)">
+                        <div class="ani slide-one"
+                        swiper-animate-effect="bounceInDown" 
+                        swiper-animate-duration="0.8s" 
+                        swiper-animate-delay="0.1s">天天把它挂嘴边</div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="bg" style="background-image: url(./images/p6.jpg)">
+                        <div class="ani slide-one"
+                        swiper-animate-effect="bounceInDown" 
+                        swiper-animate-duration="0.8s" 
+                        swiper-animate-delay="0.1s">到底什么是真爱</div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="bg" style="background-image: url(./images/p7.jpg)">
+                        <div class="ani slide-one"
+                        swiper-animate-effect="bounceInDown" 
+                        swiper-animate-duration="0.8s" 
+                        swiper-animate-delay="0.1s">I Love You</div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="bg" style="background-image: url(./images/p8.jpg)">
+                        <div class="ani slide-one"
+                        swiper-animate-effect="bounceInDown" 
+                        swiper-animate-duration="0.8s" 
+                        swiper-animate-delay="0.1s">到底有几分说得比想象更快</div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="bg" style="background-image: url(./images/p9.jpg)">
+                        <div class="ani slide-one"
+                        swiper-animate-effect="bounceInDown" 
+                        swiper-animate-duration="0.8s" 
+                        swiper-animate-delay="0.1s">是我们感情丰富太慷慨</div>
+                    </div>
+                </div>
+            </div>
+            <img src="./images/web-swipe-tip.png" class="next-icon">
+            <div class="swiper-pagination"></div>
+        </div>
+	</body>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/swiper.animate.min.js"></script>
+    <script type="text/javascript">
+        var mySwiper = new Swiper ('.swiper-container', {
+          direction : 'vertical',
+          height: window.innerHeight,
+          pagination: {
+              el: '.swiper-pagination',
+          },
+          mousewheel: true,
+          on: {
+            init: function(){
+              swiperAnimateCache(this);
+              swiperAnimate(this);
+            }, 
+            slideChangeTransitionEnd: function() {
+              swiperAnimate(this);
+            } 
+          }
+        })
+    </script>
+</html>
